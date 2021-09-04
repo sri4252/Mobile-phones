@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+<div class='container'>
+  	<div class='row'>
+    		<div class="col-md-7 mt-3">
+    		<div class="content-section mt-3 rounded" style="background-color: white">
+          <div class="media">
+            <img class="rounded-circle account-img ml-4 mt-2" src='{{ user.profile.image.url }}' width="100px" height="100px">
+            <div class="media-body">
+              <h2 class="account-heading ml-3 mt-1"><b>{{ user.username }}</b></h2>
+              <p class="text-secondary ml-3">{{ user.email }}</p>
+            </div>
+          </div>
+    
+        </div>
+        </div>
+        <div class='col-md-5'>
+      <img src='{% static "img/apply.jpg" %}' style="width: 140%;height: 120%;padding-right: 110px;">
+      </div>
+
+  </div>
+</div>
+{% endblock content %}
+
+
+
+	

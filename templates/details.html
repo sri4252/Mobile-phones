@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+.x{
+	padding-top: 50px;
+}
+</style>
+<div class='container home_container x'>
+	
+	<h2><b><u>company Role Details</u></b></h2>
+	<table style="width:100%">
+	{% for j in jl %}
+  <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Job Title</th>
+    <td>{{j.title}}</td>
+  </tr>
+  <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Job Skills</th>
+    <td>{{j.skills}}</td>
+  </tr>
+  <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Company Name</th>
+    <td>{{j.company}}</td>
+  </tr>
+   <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Job Location</th>
+    <td>{{j.location}}</td>
+  </tr>
+  <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Job Type</th>
+    <td>{{j.jobtype}}</td>
+  </tr>
+  <tr>
+    <th class='p-1 mb-2 bg-info text-white'>Job Posted type</th>
+     <td>{{j.posteddate}}</td>
+  </tr>
+    <tr>
+    <th class='p-1 mb-2 bg-info text-white'>About Job</th>
+    <td>{{j.aboutjob}}</td>
+  </tr>
+  {% endfor %}
+</table>
+	
+</div>
+
+{% endblock %}

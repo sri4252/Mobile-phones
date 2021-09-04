@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+	.colorx{
+		color:#4400cc;
+	}
+</style>
+<div class='container home_container'>
+	<div class="row">
+		{% for job in jl %}
+		<div class='col-md-2'><a href="{% url 'details' job.pk %}"><img src="{{ job.image.url}}" style="height: 80px;width: 100px;"></a>
+		</div>
+		<div class='col-md-10'>
+			<h4><b class="colorx"><a href="{% url 'details' job.pk %}">{{job.title}} - {{job.company}}</a></b></h4>
+			<p>{{job.posteddate}}</p>
+			<p>{{job.aboutjob}}</p>
+			<hr align="left" width="100%">
+		</div>
+		{% endfor %}
+	</div>
+</div>
+
+{% endblock %}
